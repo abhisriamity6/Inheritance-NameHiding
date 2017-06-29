@@ -1,15 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inheritance_NameHiding
 {
-    class Program
+    class A
     {
-        static void Main(string[] args)
+        public int i = 0;
+    }
+    class B : A
+    {
+        new int i;
+       public B(int val)
         {
+            i = val;
         }
+        public void Show()
+        {
+            Console.WriteLine("i in derived class: " + i);
+        }
+    }
+    class Demo
+    {
+       static void Main()
+        {
+            B obj = new B(2);
+            obj.Show();
+            Console.Read();
+
+        }
+
+
     }
 }
